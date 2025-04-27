@@ -1,5 +1,5 @@
 let move_speed = 3,
-  grativy = 0.5;
+  gravity = 0.5;
 let bird = document.querySelector(".bird");
 let img = document.getElementById("bird-1");
 
@@ -67,17 +67,17 @@ function play() {
   let bird_dy = 0;
   function apply_gravity() {
     if (game_state != 'Play') return;
-    bird_dy = bird_dy + grativy;
-    document.addEventListener('keydown', (e) => {
-      if (e.key == 'ArrowUp' || e.key == ' ') {
-        img.src = 'Images/Bird.jpg';
+    bird_dy = bird_dy + gravity;
+    document.addEventListener("keydown", (e) => {
+      if ((e.key == "ArrowUp" || e.key == " ") && game_state == "Play") {
+        img.src = "Images/Bird.jpg"; // Make sure capitalization matches
         bird_dy = -7.6;
       }
     });
 
-    document.addEventListener('keyup', (e) => {
-      if (e.key == 'ArrowUp' || e.key == ' ') {
-        img.src = 'Images/Bird.jpg';
+    document.addEventListener("keyup", (e) => {
+      if ((e.key == "ArrowUp" || e.key == " ") && game_state == "Play") {
+        img.src = "Images/Bird.jpg";
       }
     });
 
