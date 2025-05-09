@@ -23,7 +23,7 @@ document.addEventListener("keydown", (e) => {
     bird.style.top = "40vh";
     game_state = "Play";
     message.innerHTML = "";
-    score_title_innerHTML = "Score : ";
+    score_title.innerHTML = "Score : ";
     score_val.innerHTML = "0";
     message.classList.remove("messageStyle");
     play();
@@ -55,7 +55,7 @@ function play() {
           if (pipe_sprite_props.right < bird_props.left &&
             pipe_sprite_props.right + move_speed >= bird_props.left &&
             element.increase_score == '1'
-          ) score_val.innerHTML = + score_val.innerHTML + 1;
+          ) score_val.innerHTML = parseInt(score_val.innerHTML) + 1;
         }
         element.style.left = pipe_sprite_props.left - move_speed + 'px';
       }
